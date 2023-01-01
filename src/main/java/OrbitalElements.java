@@ -1,5 +1,8 @@
-@SetIntFieldsToZero
+import custom_annotations.ZeroIntegerFields;
+
+@ZeroIntegerFields
 public class OrbitalElements {
+
     private int semiMajorAxis;
     private int eccentricity;
     private int inclination;
@@ -14,6 +17,27 @@ public class OrbitalElements {
         this.longitudeOfAscendingNode = longitudeOfAscendingNode;
         this.argumentOfPeriapsis = argumentOfPeriapsis;
         this.trueAnomaly = trueAnomaly;
+    }
+
+    public OrbitalElements() {
+        this.semiMajorAxis = 1;
+        this.eccentricity = 1;
+        this.inclination = 1;
+        this.longitudeOfAscendingNode = 1;
+        this.argumentOfPeriapsis = 1;
+        this.trueAnomaly = 1;
+    }
+
+    @Override
+    public String toString() {
+        return "OrbitalElements{" +
+            "semiMajorAxis=" + semiMajorAxis +
+            ", eccentricity=" + eccentricity +
+            ", inclination=" + inclination +
+            ", longitudeOfAscendingNode=" + longitudeOfAscendingNode +
+            ", argumentOfPeriapsis=" + argumentOfPeriapsis +
+            ", trueAnomaly=" + trueAnomaly +
+            '}';
     }
 
     // Getters and setters for the fields
