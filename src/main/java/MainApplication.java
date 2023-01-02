@@ -1,11 +1,10 @@
 import custom_annotations.annotation_processors.ZeroIntegerFieldsProcessor;
 
-public class DemonstrationClass {
+public class MainApplication {
 
     public static void main(String[] args) {
         OrbitalElements orbitalElements = new OrbitalElements("Planet");
-        ZeroIntegerFieldsProcessor zeroIntegerFieldsProcessor = new ZeroIntegerFieldsProcessor();
-        zeroIntegerFieldsProcessor.process(orbitalElements);
+        new ZeroIntegerFieldsProcessor().process(orbitalElements);
         System.out.println(orbitalElements);
     }
 }

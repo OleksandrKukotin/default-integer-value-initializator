@@ -21,19 +21,6 @@ public class OrbitalElements {
         this.trueAnomaly = 1;
     }
 
-    @Override
-    public String toString() {
-        return "OrbitalElements{" +
-            "orbitName='" + orbitName + '\'' +
-            ", semiMajorAxis=" + semiMajorAxis +
-            ", eccentricity=" + eccentricity +
-            ", inclination=" + inclination +
-            ", longitudeOfAscendingNode=" + longitudeOfAscendingNode +
-            ", argumentOfPeriapsis=" + argumentOfPeriapsis +
-            ", trueAnomaly=" + trueAnomaly +
-            '}';
-    }
-
     public String getOrbitName() {
         return orbitName;
     }
@@ -60,5 +47,18 @@ public class OrbitalElements {
 
     public int getTrueAnomaly() {
         return trueAnomaly;
+    }
+
+    @Override
+    public String toString() {
+        return "OrbitalElements{" +
+            "orbitName='" + orbitName + '\'' +
+            ", semiMajorAxis=" + semiMajorAxis +
+            ", eccentricity=" + eccentricity +
+            ", inclination=" + inclination +
+            ", longitudeOfAscendingNode=" + longitudeOfAscendingNode +
+            ", argumentOfPeriapsis=" + argumentOfPeriapsis +
+            ", trueAnomaly=" + trueAnomaly +
+            '}';
     }
 }
