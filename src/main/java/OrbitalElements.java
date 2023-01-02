@@ -3,23 +3,16 @@ import custom_annotations.ZeroIntegerFields;
 @ZeroIntegerFields
 public class OrbitalElements {
 
-    private int semiMajorAxis;
-    private int eccentricity;
-    private int inclination;
-    private int longitudeOfAscendingNode;
-    private int argumentOfPeriapsis;
-    private int trueAnomaly;
+    private final String orbitName;
+    private final int semiMajorAxis;
+    private final int eccentricity;
+    private final int inclination;
+    private final int longitudeOfAscendingNode;
+    private final int argumentOfPeriapsis;
+    private final int trueAnomaly;
 
-    public OrbitalElements(int semiMajorAxis, int eccentricity, int inclination, int longitudeOfAscendingNode, int argumentOfPeriapsis, int trueAnomaly) {
-        this.semiMajorAxis = semiMajorAxis;
-        this.eccentricity = eccentricity;
-        this.inclination = inclination;
-        this.longitudeOfAscendingNode = longitudeOfAscendingNode;
-        this.argumentOfPeriapsis = argumentOfPeriapsis;
-        this.trueAnomaly = trueAnomaly;
-    }
-
-    public OrbitalElements() {
+    public OrbitalElements(String orbitName) {
+        this.orbitName = orbitName;
         this.semiMajorAxis = 1;
         this.eccentricity = 1;
         this.inclination = 1;
@@ -31,7 +24,8 @@ public class OrbitalElements {
     @Override
     public String toString() {
         return "OrbitalElements{" +
-            "semiMajorAxis=" + semiMajorAxis +
+            "orbitName='" + orbitName + '\'' +
+            ", semiMajorAxis=" + semiMajorAxis +
             ", eccentricity=" + eccentricity +
             ", inclination=" + inclination +
             ", longitudeOfAscendingNode=" + longitudeOfAscendingNode +
@@ -40,52 +34,31 @@ public class OrbitalElements {
             '}';
     }
 
-    // Getters and setters for the fields
-    public int getSemiMajorAxis() {
-        return semiMajorAxis;
+    public String getOrbitName() {
+        return orbitName;
     }
 
-    public void setSemiMajorAxis(int semiMajorAxis) {
-        this.semiMajorAxis = semiMajorAxis;
+    public int getSemiMajorAxis() {
+        return semiMajorAxis;
     }
 
     public int getEccentricity() {
         return eccentricity;
     }
 
-    public void setEccentricity(int eccentricity) {
-        this.eccentricity = eccentricity;
-    }
-
     public int getInclination() {
         return inclination;
-    }
-
-    public void setInclination(int inclination) {
-        this.inclination = inclination;
     }
 
     public int getLongitudeOfAscendingNode() {
         return longitudeOfAscendingNode;
     }
 
-    public void setLongitudeOfAscendingNode(int longitudeOfAscendingNode) {
-        this.longitudeOfAscendingNode = longitudeOfAscendingNode;
-    }
-
     public int getArgumentOfPeriapsis() {
         return argumentOfPeriapsis;
     }
 
-    public void setArgumentOfPeriapsis(int argumentOfPeriapsis) {
-        this.argumentOfPeriapsis = argumentOfPeriapsis;
-    }
-
     public int getTrueAnomaly() {
         return trueAnomaly;
-    }
-
-    public void setTrueAnomaly(int trueAnomaly) {
-        this.trueAnomaly = trueAnomaly;
     }
 }

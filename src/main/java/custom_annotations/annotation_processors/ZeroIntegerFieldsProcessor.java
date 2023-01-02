@@ -1,18 +1,15 @@
 package custom_annotations.annotation_processors;
 
 import custom_annotations.ZeroIntegerFields;
+import org.apache.log4j.Logger;
 
 import java.lang.reflect.Field;
-import java.util.logging.Logger;
 
 public class ZeroIntegerFieldsProcessor {
 
-    private static final Logger logger = Logger.getLogger(ZeroIntegerFieldsProcessor.class.getName());
+    private final org.apache.log4j.Logger LOGGER = Logger.getLogger(ZeroIntegerFieldsProcessor.class.getName());
 
-    private ZeroIntegerFieldsProcessor() {
-    }
-
-    public static void process(Object obj) {
+    public void process(Object obj) {
         Class<?> target = obj.getClass();
 
         if (target.isAnnotationPresent(ZeroIntegerFields.class)) {
@@ -25,8 +22,7 @@ public class ZeroIntegerFieldsProcessor {
                         field.setInt(obj, 0);
                         field.setAccessible(false);
                     } catch (IllegalAccessException e) {
-                        logger.info("Illegal Access Exception threw during setting zero values");
-                        break;
+                        LOGGER.error("Couldn't set zero to the following field: " + field.getName());
                     }
                 }
             }
